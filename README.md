@@ -4,7 +4,24 @@ Keyboard, mouse, and display settings for the Ace Combat Zero preorder port that
 
 Unofficial, and not affiliated with Bandai Namco. You need your own install of the game.
 
-Run `ACZeroAdapter`. The game folder box starts at a common Steam location. Use Browse if Zero is somewhere else. Selecting the Ace Combat 8 folder also works; the program looks for `ACZero` inside it.
+## Download
+
+Download `ACZeroAdapter.exe` from the [latest release](https://github.com/cxt240/AC-Zero-Adapter/releases/latest). It is a Windows program and already includes the .NET runtime, so there is nothing else to install. The exe is not stored in the git repository. GitHub rejects a file this large.
+
+Close Ace Combat Zero, run the exe, and press Apply. The game folder box starts at a common Steam location. Use Browse if Zero is somewhere else. Selecting the Ace Combat 8 folder also works; the program looks for `ACZero` inside it.
+
+## Build
+
+Building is only for changing the program. Install the [.NET 9 SDK](https://dotnet.microsoft.com/download), then from this folder:
+
+```powershell
+dotnet test
+dotnet publish src/ACZeroAdapter/ACZeroAdapter.csproj -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true -p:DebugSymbols=false -o publish
+```
+
+The program is `publish\ACZeroAdapter.exe`.
+
+Pushing a version tag such as `v1.0.0` runs the release workflow, which tests the project and attaches a new exe to that GitHub release.
 
 Quit the game completely after Apply. A mission that is already running keeps the old controls. If the game is open, Apply asks before it writes.
 
