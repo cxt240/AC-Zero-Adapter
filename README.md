@@ -4,6 +4,8 @@ Keyboard, mouse, and display settings for the Ace Combat Zero preorder port that
 
 Unofficial, and not affiliated with Bandai Namco. You need your own install of the game.
 
+Built with AI assistance, for PC players using a keyboard and mouse instead of a joystick.
+
 ## Download
 
 Download `ACZeroAdapter.exe` from the [latest release](https://github.com/cxt240/AC-Zero-Adapter/releases/latest). It is a Windows program and already includes the .NET runtime, so there is nothing else to install. The exe is not stored in the git repository. GitHub rejects a file this large.
